@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common';
-import { RoutesService } from './routes.service';
-import { RoutesController } from './routes.controller';
-import { RouteInMemoryRepository } from '../@core/infra/db/in-memory/route-in-memory.repository';
-import { CreateRouteUseCase } from '../@core/application/create-route.use-case';
-import { RouteRepositoryInterface } from '../@core/domain/route.repository';
-import { ListAllRoutesUseCase } from '../@core/application/list-all-routes.use-case';
-import { TypeOrmModule, getDataSourceToken } from '@nestjs/typeorm';
-import { RouteSchema } from '../@core/infra/db/typeorm/route.schema';
-import { RouteTypeOrmRepository } from '../@core/infra/db/typeorm/route-typeorm.repository';
+import { getDataSourceToken, TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { CreateRouteUseCase } from '../@core/application/create-route.use-case';
+import { ListAllRoutesUseCase } from '../@core/application/list-all-routes.use-case';
 import { Route } from '../@core/domain/route.entity';
+import { RouteRepositoryInterface } from '../@core/domain/route.repository';
+import { RouteInMemoryRepository } from '../@core/infra/db/in-memory/route-in-memory.repository';
+import { RouteTypeOrmRepository } from '../@core/infra/db/typeorm/route-typeorm.repository';
+import { RouteSchema } from '../@core/infra/db/typeorm/route.schema';
+import { RoutesController } from './routes.controller';
+import { RoutesService } from './routes.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([RouteSchema])],

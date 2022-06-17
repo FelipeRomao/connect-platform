@@ -2,8 +2,6 @@ import crypto from 'crypto';
 
 export type LatLng = { lat: number; lng: number };
 
-//class, type, interface
-
 export type RouteProps = {
   title: string;
   startPosition: LatLng;
@@ -36,24 +34,15 @@ export class Route {
 
   updateTitle(title: string) {
     this.title = title;
-    //mudar pra maiusculo
-    //valor alguns caracteres
-    //validacoes
   }
 
   updatePosition(startPosition: LatLng, endPosition: LatLng) {
     this.startPosition = startPosition;
     this.endPosition = endPosition;
-    //mudar pra maiusculo
-    //valor alguns caracteres
-    //validacoes
   }
 
   updatePoints(points: LatLng[]) {
     this.points = points;
-    //mudar pra maiusculo
-    //valor alguns caracteres
-    //validacoes
   }
 
   get title() {
