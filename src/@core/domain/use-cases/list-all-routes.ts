@@ -1,5 +1,5 @@
-import { Route } from '../entities/route';
+import { RouteOutput } from '../entities/route';
 
 export interface ListAllRoutes {
-  findAll(): Promise<Route[]>;
+  execute(): Promise<RouteOutput[]>;
 }

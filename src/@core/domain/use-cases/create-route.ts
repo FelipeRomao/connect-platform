@@ -1,5 +1,5 @@
-import { Route } from '../entities/route';
+import { Route, RouteOutput } from '../entities/route';
 
 export interface CreateRoute {
-  insert(route: Route): Promise<void>;
+  execute(input: Route): Promise<RouteOutput>;
 }

@@ -9,6 +9,14 @@ export type RouteProps = {
   points?: LatLng[];
 };
 
+export type RouteOutput = {
+  id: string;
+  title: string;
+  startPosition: LatLng;
+  endPosition: LatLng;
+  points?: LatLng[];
+};
+
 export class Route {
   public readonly id: string;
   public props: Required<RouteProps>;
