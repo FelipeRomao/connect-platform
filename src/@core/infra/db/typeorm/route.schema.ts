@@ -1,5 +1,5 @@
 import { EntitySchema } from 'typeorm';
-import { Route } from '../../../domain/route.entity';
+import { Route } from '../../../domain/entities/route';
 
 export const RouteSchema = new EntitySchema<Route>({
   name: 'route',

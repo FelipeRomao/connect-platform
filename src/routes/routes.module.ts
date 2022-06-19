@@ -1,21 +1,19 @@
 import { Module } from '@nestjs/common';
 import { getDataSourceToken, TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { CreateRouteUseCase } from '../@core/application/create-route.use-case';
-import { ListAllRoutesUseCase } from '../@core/application/list-all-routes.use-case';
-import { Route } from '../@core/domain/route.entity';
-import { RouteRepositoryInterface } from '../@core/domain/route.repository';
+import { CreateRouteService } from '../@core/app/services/create-route';
+import { ListAllRoutesService } from '../@core/app/services/list-all-routes';
+import { Route } from '../@core/domain/entities/route';
+import { RouteRepositoryInterface } from '../@core/domain/use-cases/route.repository';
 import { RouteInMemoryRepository } from '../@core/infra/db/in-memory/route-in-memory.repository';
 import { RouteTypeOrmRepository } from '../@core/infra/db/typeorm/route-typeorm.repository';
 import { RouteSchema } from '../@core/infra/db/typeorm/route.schema';
 import { RoutesController } from './routes.controller';
-import { RoutesService } from './routes.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([RouteSchema])],
   controllers: [RoutesController],
   providers: [
-    RoutesService,
     {
       provide: RouteTypeOrmRepository,
       useFactory: (dataSource: DataSource) => {
@@ -28,16 +26,16 @@ import { RoutesService } from './routes.service';
       useClass: RouteInMemoryRepository,
     },
     {
-      provide: CreateRouteUseCase,
+      provide: CreateRouteService,
       useFactory: (routeRepo: RouteRepositoryInterface) => {
-        return new CreateRouteUseCase(routeRepo);
+        return new CreateRouteService(routeRepo);
       },
       inject: [RouteTypeOrmRepository],
     },
     {
-      provide: ListAllRoutesUseCase,
+      provide: ListAllRoutesService,
       useFactory: (routeRepo: RouteRepositoryInterface) => {
-        return new ListAllRoutesUseCase(routeRepo);
+        return new ListAllRoutesService(routeRepo);
       },
       inject: [RouteTypeOrmRepository],
     },

@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
-import { Route } from '../../../domain/route.entity';
-import { RouteRepositoryInterface } from '../../../domain/route.repository';
+import { Route } from '../../../domain/entities/route';
+import { RouteRepositoryInterface } from '../../../domain/use-cases/route.repository';
 
 export class RouteTypeOrmRepository implements RouteRepositoryInterface {
   constructor(private ormRepo: Repository<Route>) {}

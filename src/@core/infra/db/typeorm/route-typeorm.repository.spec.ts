@@ -1,7 +1,7 @@
-import { Route, RouteProps } from '../../../domain/route.entity';
 import { DataSource } from 'typeorm';
-import { RouteSchema } from './route.schema';
+import { Route, RouteProps } from '../../../domain/entities/route';
 import { RouteTypeOrmRepository } from './route-typeorm.repository';
+import { RouteSchema } from './route.schema';
 
 describe('RouteTypeOrmRepository Test', () => {
   it('should insert a new route', async () => {

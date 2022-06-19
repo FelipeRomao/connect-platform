@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Route } from '../../../domain/route.entity';
+import { Route } from '../../../domain/entities/route';
 import { RouteSchema } from './route.schema';
 
 describe('RouteSchema Tests', () => {

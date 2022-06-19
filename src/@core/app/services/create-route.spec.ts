@@ -1,10 +1,10 @@
-import { RouteInMemoryRepository } from '../infra/db/in-memory/route-in-memory.repository';
-import { CreateRouteUseCase } from './create-route.use-case';
+import { RouteInMemoryRepository } from '../../infra/db/in-memory/route-in-memory.repository';
+import { CreateRouteService } from './create-route';
 
 describe('CreateRouteUseCase Tests', () => {
   it('should create a new route', async () => {
     const repository = new RouteInMemoryRepository();
-    const createUseCase = new CreateRouteUseCase(repository);
+    const createUseCase = new CreateRouteService(repository);
     const output = await createUseCase.execute({
       title: 'my title',
       startPosition: { lat: 1, lng: 2 },
