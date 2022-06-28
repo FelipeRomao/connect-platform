@@ -22,7 +22,7 @@ export class Route {
   public props: Required<RouteProps>;
 
   private constructor(props: RouteProps, id?: string) {
-    this.id = id || crypto.randomUUID();
+    this.id = id || crypto.randomBytes(16).toString('hex');
 
     if (!props) {
       //@ts-expect-error used for ORM
