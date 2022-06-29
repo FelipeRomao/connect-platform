@@ -13,23 +13,15 @@ export class RouteTypeOrmRepository implements CRUDRepository<Route> {
     return await this.ormRepo.find();
   }
 
-  findOne(data: Route): Promise<Route> {
-    throw new Error('Method not implemented.');
+  async findOne(id: string): Promise<Route> {
+    return await this.ormRepo.findOneBy({ id });
   }
 
-  update(data: Route): Promise<Route> {
-    throw new Error('Method not implemented.');
+  async update(id: string, updateDto): Promise<any> {
+    return await this.ormRepo.update(id, updateDto);
   }
 
-  remove(data: Route): Promise<void> {
-    throw new Error('Method not implemented.');
+  async remove(id: string): Promise<void> {
+    await this.ormRepo.delete(id);
   }
-
-  /* async insert(route: Route): Promise<void> {
-    await this.ormRepo.save(route);
-  }
-
-  findAll(): Promise<Route[]> {
-    return this.ormRepo.find();
-  } */
 }

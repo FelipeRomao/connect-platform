@@ -16,15 +16,15 @@ export class RouteService implements BaseEntity<CreateRouteInput> {
     return await this.crudRepo.findAll();
   }
 
-  findOne(data: Route): Promise<Route> {
-    throw new Error('Method not implemented.');
+  async findOne(id: string): Promise<Route> {
+    return await this.crudRepo.findOne(id);
   }
 
-  update(data: Route): Promise<Route> {
-    throw new Error('Method not implemented.');
+  async update(id: string, updateDto): Promise<Route> {
+    return await this.crudRepo.update(id, updateDto);
   }
 
-  remove(data: Route): Promise<void> {
-    throw new Error('Method not implemented.');
+  async remove(id: string): Promise<void> {
+    await this.crudRepo.remove(id);
   }
 }
