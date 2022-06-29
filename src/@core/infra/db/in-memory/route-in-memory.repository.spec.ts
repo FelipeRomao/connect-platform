@@ -1,4 +1,4 @@
-import { Route, RouteProps } from '../../../../domain/entities/route';
+import { Route, RouteProps } from '../../../domain/entities/route';
 import { RouteInMemoryRepository } from './route-in-memory.repository';
 
 describe('RouteInMemoryRepository Test', () => {

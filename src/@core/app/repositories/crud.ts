@@ -1,5 +1,5 @@
-export interface CRUDBaseEntity<T> {
-  create(): Promise<T>;
+export interface CRUDRepository<T> {
+  create(input: T): Promise<T>;
   findAll(): Promise<T[]>;
   findOne(data: T): Promise<T>;
   update(data: T): Promise<T>;
