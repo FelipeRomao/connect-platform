@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Route, RouteProps } from '../../../domain/entities/route';
+import { Route, RouteProps } from '../../../../domain/entities/route';
 import { RouteTypeOrmRepository } from './route-typeorm.repository';
 import { RouteSchema } from './route.schema';
 

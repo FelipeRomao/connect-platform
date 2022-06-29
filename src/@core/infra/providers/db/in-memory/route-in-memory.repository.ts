@@ -1,6 +1,6 @@
-import { CreateRouteRepository } from 'src/@core/app/contracts/create-route-repository';
-import { ListAllRoutesRepository } from 'src/@core/app/contracts/list-all-routes-repository';
-import { Route } from '../../../domain/entities/route';
+import { CreateRouteRepository } from 'src/@core/app/repositories/create-route';
+import { ListAllRoutesRepository } from 'src/@core/app/repositories/list-all-routes';
+import { Route } from '../../../../domain/entities/route';
 
 export class RouteInMemoryRepository
   implements CreateRouteRepository, ListAllRoutesRepository

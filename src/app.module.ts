@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { join } from 'path';
+import { RouteSchema } from './@core/infra/providers/db/typeorm/route.schema';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RoutesModule } from './routes/routes.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { join } from 'path';
-import { RouteSchema } from './@core/infra/db/typeorm/route.schema';
 @Module({
   imports: [
     TypeOrmModule.forRoot({

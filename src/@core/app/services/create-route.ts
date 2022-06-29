@@ -1,8 +1,8 @@
 import { Route } from '../../domain/entities/route';
-import { CreateRoute } from '../../domain/use-cases/create-route';
-import { CreateRouteRepository } from '../contracts/create-route-repository';
-import { CreateRouteInput } from '../models/route-input';
-import { CreateRouteOutput } from '../models/route-output';
+import { CreateRoute } from '../../domain/repositories/create-route';
+import { CreateRouteInput } from '../dtos/route-input';
+import { CreateRouteOutput } from '../dtos/route-output';
+import { CreateRouteRepository } from '../repositories/create-route';
 
 export class CreateRouteService implements CreateRoute {
   constructor(private routeRepo: CreateRouteRepository) {}

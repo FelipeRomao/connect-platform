@@ -1,6 +1,6 @@
-import { ListAllRoutes } from '../../domain/use-cases/list-all-routes';
-import { ListAllRoutesRepository } from '../contracts/list-all-routes-repository';
-import { CreateRouteOutput } from '../models/route-output';
+import { ListAllRoutes } from '../../domain/repositories/list-all-routes';
+import { CreateRouteOutput } from '../dtos/route-output';
+import { ListAllRoutesRepository } from '../repositories/list-all-routes';
 
 export class ListAllRoutesService implements ListAllRoutes {
   constructor(private routeRepo: ListAllRoutesRepository) {}

@@ -1,4 +1,4 @@
-import { RouteModel } from '../models/route-model';
+import { RouteModel } from '../dtos/route-model';
 
 export interface ListAllRoutesRepository {
   findAll(): Promise<RouteModel[]>;

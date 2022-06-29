@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import { CreateRouteService } from '../../../app/services/create-route';
 import { ListAllRoutesService } from '../../../app/services/list-all-routes';
-import { RouteInMemoryRepository } from '../../db/in-memory/route-in-memory.repository';
+import { RouteInMemoryRepository } from '../../providers/db/in-memory/route-in-memory.repository';
 
 const app: Express = express();
 app.use(express.json());

@@ -1,7 +1,7 @@
-import { CreateRouteRepository } from 'src/@core/app/contracts/create-route-repository';
-import { ListAllRoutesRepository } from 'src/@core/app/contracts/list-all-routes-repository';
+import { CreateRouteRepository } from 'src/@core/app/repositories/create-route';
+import { ListAllRoutesRepository } from 'src/@core/app/repositories/list-all-routes';
 import { Repository } from 'typeorm';
-import { Route } from '../../../domain/entities/route';
+import { Route } from '../../../../domain/entities/route';
 
 export class RouteTypeOrmRepository
   implements CreateRouteRepository, ListAllRoutesRepository
