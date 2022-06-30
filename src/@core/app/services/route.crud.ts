@@ -1,6 +1,6 @@
 import { Route } from 'src/@core/domain/entities/route';
 import { BaseEntity } from 'src/@core/domain/repositories/base.entity';
-import { CreateRouteInput } from '../dtos/route-input';
+import { CreateRouteInput } from '../dtos/routes/input';
 import { CRUDRepository } from '../repositories/crud';
 
 export class RouteService implements BaseEntity<CreateRouteInput> {

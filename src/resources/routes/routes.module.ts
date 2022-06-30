@@ -3,9 +3,9 @@ import { getDataSourceToken, TypeOrmModule } from '@nestjs/typeorm';
 import { CRUDRepository } from 'src/@core/app/repositories/crud';
 import { RouteService } from 'src/@core/app/services/route.crud';
 import { DataSource } from 'typeorm';
-import { Route } from '../@core/domain/entities/route';
-import { RouteTypeOrmRepository } from '../@core/infra/db/typeorm/route-typeorm.repository';
-import { RouteSchema } from '../@core/infra/db/typeorm/route.schema';
+import { Route } from '../../@core/domain/entities/route';
+import { RouteTypeOrmRepository } from '../../@core/infra/db/typeorm/route-typeorm.repository';
+import { RouteSchema } from '../../@core/infra/db/typeorm/route.schema';
 import { RoutesController } from './routes.controller';
 
 @Module({
@@ -19,7 +19,6 @@ import { RoutesController } from './routes.controller';
       },
       inject: [getDataSourceToken()],
     },
-
     {
       provide: RouteService,
       useFactory: (routeRepo: CRUDRepository<Route>) => {

@@ -1,9 +1,7 @@
-import { IsNotEmpty, IsString, Length } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 export class CreateRouteDto {
-  @IsNotEmpty()
-  @IsString()
-  @Length(10, 20)
+  @IsNotEmpty({ message: 'Não pode ser vazio' })
   title: string;
 
   startPosition: { lat: number; lng: number };

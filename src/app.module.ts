@@ -4,7 +4,7 @@ import { join } from 'path';
 import { RouteSchema } from './@core/infra/db/typeorm/route.schema';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RoutesModule } from './routes/routes.module';
+import { RoutesModule } from './resources/routes/routes.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({

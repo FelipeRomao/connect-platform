@@ -8,15 +8,15 @@ import {
   Post,
 } from '@nestjs/common';
 import { RouteService } from 'src/@core/app/services/route.crud';
-import { Route } from 'src/@core/domain/entities/route';
-import { UpdateRouteDto } from './dto/update-route.dto';
+import { UpdateRouteDto } from 'src/shared/dtos/routes/update-route.dto';
+import { CreateRouteDto } from '../../shared/dtos/routes/create.dto';
 
 @Controller('routes')
 export class RoutesController {
   constructor(private readonly routeService: RouteService) {}
 
   @Post()
-  async create(@Body() createRouteDto: Route) {
+  async create(@Body() createRouteDto: CreateRouteDto) {
     return await this.routeService.create(createRouteDto);
   }
 
