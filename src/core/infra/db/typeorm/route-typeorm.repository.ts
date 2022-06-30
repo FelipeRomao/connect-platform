@@ -1,6 +1,6 @@
-import { CRUDRepository } from 'src/@core/app/repositories/crud';
+import { CRUDRepository } from '@/core/app/repositories/crud';
+import { Route } from '@/core/domain/entities/route';
 import { Repository } from 'typeorm';
-import { Route } from '../../../domain/entities/route';
 
 export class RouteTypeOrmRepository implements CRUDRepository<Route> {
   constructor(private ormRepo: Repository<Route>) {}

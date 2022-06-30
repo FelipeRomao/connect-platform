@@ -1,5 +1,5 @@
-import { Route } from 'src/@core/domain/entities/route';
-import { BaseEntity } from 'src/@core/domain/repositories/base.entity';
+import { Route } from '@/core/domain/entities/route';
+import { BaseEntity } from '@/core/domain/repositories/base.entity';
 import { CreateRouteInput } from '../dtos/routes/input';
 import { CRUDRepository } from '../repositories/crud';
 

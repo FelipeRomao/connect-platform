@@ -1,3 +1,6 @@
+import { RouteService } from '@/core/app/services/route.crud';
+import { CreateRouteDto } from '@/shared/dtos/routes/create.dto';
+import { UpdateRouteDto } from '@/shared/dtos/routes/update.dto';
 import {
   Body,
   Controller,
@@ -7,9 +10,6 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { RouteService } from 'src/@core/app/services/route.crud';
-import { UpdateRouteDto } from 'src/shared/dtos/routes/update-route.dto';
-import { CreateRouteDto } from '../../shared/dtos/routes/create.dto';
 
 @Controller('routes')
 export class RoutesController {
