@@ -7,8 +7,8 @@ import {
   Delete,
   Get,
   Param,
-  Patch,
   Post,
+  Put,
 } from '@nestjs/common';
 
 @Controller('routes')
@@ -30,7 +30,7 @@ export class RoutesController {
     return this.routeService.findOne(id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateRouteDto: UpdateRouteDto) {
     return this.routeService.update(id, updateRouteDto);
   }

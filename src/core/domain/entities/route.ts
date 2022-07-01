@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import { Entity } from '@/shared/domain/entity';
 
 export type LatLng = { lat: number; lng: number };
 
@@ -17,12 +17,12 @@ export type RouteOutput = {
   points?: LatLng[];
 };
 
-export class Route {
+export class Route extends Entity {
   public readonly id: string;
   public props: Required<RouteProps>;
 
-  private constructor(props: RouteProps, id?: string) {
-    this.id = id || crypto.randomBytes(16).toString('hex');
+  private constructor(props: RouteProps) {
+    super();
 
     if (!props) {
       //@ts-expect-error used for ORM
@@ -36,8 +36,8 @@ export class Route {
     };
   }
 
-  static create(props: RouteProps, id?: string) {
-    return new Route(props, id);
+  static create(props: RouteProps) {
+    return new Route(props);
   }
 
   updateTitle(title: string) {
