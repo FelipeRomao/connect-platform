@@ -3,28 +3,28 @@ import { BaseEntity } from '@/core/domain/repositories/base.entity';
 import { CreateRouteInput } from '../dtos/routes/input';
 import { CRUDRepository } from '../repositories/crud';
 
-export class RouteService implements BaseEntity<CreateRouteInput> {
-  constructor(private readonly crudRepo: CRUDRepository<Route>) {}
+export class RoutesService implements BaseEntity<CreateRouteInput> {
+  constructor(private readonly repo: CRUDRepository<Route>) {}
 
   async create(input: CreateRouteInput): Promise<CreateRouteInput> {
     const route = Route.create(input);
-    await this.crudRepo.create(route);
+    await this.repo.create(route);
     return route.toJSON();
   }
 
   async findAll(): Promise<Route[]> {
-    return await this.crudRepo.findAll();
+    return await this.repo.findAll();
   }
 
   async findOne(id: string): Promise<Route> {
-    return await this.crudRepo.findOne(id);
+    return await this.repo.findOne(id);
   }
 
   async update(id: string, updateDto): Promise<Route> {
-    return await this.crudRepo.update(id, updateDto);
+    return await this.repo.update(id, updateDto);
   }
 
   async remove(id: string): Promise<void> {
-    await this.crudRepo.remove(id);
+    await this.repo.remove(id);
   }
 }

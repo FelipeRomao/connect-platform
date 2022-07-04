@@ -5,6 +5,8 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RouteSchema } from './core/infra/db/typeorm/route.schema';
+import { UserSchema } from './core/infra/db/typeorm/user.schema';
+import { UsersModule } from './resources/users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -12,9 +14,10 @@ import { RouteSchema } from './core/infra/db/typeorm/route.schema';
       database: join(__dirname, 'database.sqlite'),
       synchronize: true,
       logging: true,
-      entities: [RouteSchema],
+      entities: [RouteSchema, UserSchema],
     }),
     RoutesModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,6 +1,6 @@
-import { RouteService } from '@/core/app/services/route.crud';
-import { CreateRouteDto } from '@/shared/dtos/routes/create.dto';
-import { UpdateRouteDto } from '@/shared/dtos/routes/update.dto';
+import { RoutesService } from '@/core/app/services/route.crud';
+import { CreateRouteDto } from '@/shared/dtos/routes/create';
+import { UpdateRouteDto } from '@/shared/dtos/routes/update';
 import {
   Body,
   Controller,
@@ -13,7 +13,7 @@ import {
 
 @Controller('routes')
 export class RoutesController {
-  constructor(private readonly routeService: RouteService) {}
+  constructor(private readonly routeService: RoutesService) {}
 
   @Post()
   async create(@Body() createRouteDto: CreateRouteDto) {

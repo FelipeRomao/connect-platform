@@ -1,5 +1,5 @@
 import { CRUDRepository } from '@/core/app/repositories/crud';
-import { RouteService } from '@/core/app/services/route.crud';
+import { RoutesService } from '@/core/app/services/route.crud';
 import { Route } from '@/core/domain/entities/route';
 import { RouteTypeOrmRepository } from '@/core/infra/db/typeorm/route-typeorm.repository';
 import { RouteSchema } from '@/core/infra/db/typeorm/route.schema';
@@ -20,9 +20,9 @@ import { RoutesController } from './routes.controller';
       inject: [getDataSourceToken()],
     },
     {
-      provide: RouteService,
+      provide: RoutesService,
       useFactory: (routeRepo: CRUDRepository<Route>) => {
-        return new RouteService(routeRepo);
+        return new RoutesService(routeRepo);
       },
       inject: [RouteTypeOrmRepository],
     },

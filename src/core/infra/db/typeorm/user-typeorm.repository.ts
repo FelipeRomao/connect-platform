@@ -1,19 +1,19 @@
 import { CRUDRepository } from '@/core/app/repositories/crud';
-import { Route } from '@/core/domain/entities/route';
+import { User } from '@/core/domain/entities/user';
 import { Repository } from 'typeorm';
 
-export class RouteTypeOrmRepository implements CRUDRepository<Route> {
-  constructor(private readonly ormRepo: Repository<Route>) {}
+export class UserTypeOrmRepository implements CRUDRepository<User> {
+  constructor(private readonly ormRepo: Repository<User>) {}
 
-  async create(route: Route): Promise<Route> {
-    return await this.ormRepo.save(route);
+  async create(user: User): Promise<User> {
+    return await this.ormRepo.save(user);
   }
 
-  async findAll(): Promise<Route[]> {
+  async findAll(): Promise<User[]> {
     return await this.ormRepo.find();
   }
 
-  async findOne(id: string): Promise<Route> {
+  async findOne(id: string): Promise<User> {
     return await this.ormRepo.findOneBy({ id });
   }
 

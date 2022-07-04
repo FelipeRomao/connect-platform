@@ -17,12 +17,12 @@ export type RouteOutput = {
   points?: LatLng[];
 };
 
-export class Route extends Entity {
+export class Route extends Entity<RouteProps> {
   public readonly id: string;
   public props: Required<RouteProps>;
 
   private constructor(props: RouteProps) {
-    super();
+    super(props);
 
     if (!props) {
       //@ts-expect-error used for ORM
@@ -83,12 +83,5 @@ export class Route extends Entity {
 
   private set points(value: LatLng[]) {
     this.props.points = value;
-  }
-
-  toJSON() {
-    return {
-      id: this.id,
-      ...this.props,
-    };
   }
 }

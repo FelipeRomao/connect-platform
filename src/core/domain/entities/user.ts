@@ -1,17 +1,17 @@
-import crypto from 'crypto';
+import { Entity } from '@/shared/domain/entity';
 
 export type UserProps = {
-  avatar_url: string;
-  display_name: string;
+  avatarUrl: string;
+  displayName: string;
   birth: Date;
 };
 
-export class User {
+export class User extends Entity<UserProps> {
   public readonly id: string;
   public props: Required<UserProps>;
 
-  constructor(props: UserProps, id?: string) {
-    this.id = id || crypto.randomBytes(16).toString('hex');
+  private constructor(props: UserProps) {
+    super(props);
 
     if (!props) {
       //@ts-expect-error used for ORM
@@ -20,10 +20,31 @@ export class User {
     }
   }
 
-  toJSON() {
-    return {
-      id: this.id,
-      ...this.props,
-    };
+  static create(props: UserProps) {
+    return new User(props);
+  }
+
+  get avatarUrl(): string {
+    return this.props.avatarUrl;
+  }
+
+  private set avatarUrl(value: string) {
+    this.props.avatarUrl = value;
+  }
+
+  get displayName(): string {
+    return this.props.displayName;
+  }
+
+  private set displayName(value: string) {
+    this.props.displayName = value;
+  }
+
+  get birth(): Date {
+    return this.props.birth;
+  }
+
+  private set birth(value: Date) {
+    this.props.birth = value;
   }
 }
