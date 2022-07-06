@@ -1,8 +1,8 @@
 import { CRUDRepository } from '@/core/app/repositories/crud';
 import { RoutesService } from '@/core/app/services/route.crud';
 import { Route } from '@/core/domain/entities/route';
-import { RouteTypeOrmRepository } from '@/core/infra/database/typeorm/route-typeorm.repository';
-import { RouteSchema } from '@/core/infra/database/typeorm/route.schema';
+import { RouteTypeOrmRepository } from '@/core/infra/typeorm/repositories/route';
+import { RouteSchema } from '@/core/infra/typeorm/schemas/route';
 import { Module } from '@nestjs/common';
 import { getDataSourceToken, TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
