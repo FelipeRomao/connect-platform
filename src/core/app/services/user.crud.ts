@@ -1,26 +1,25 @@
-import { User, UserProps } from '@/core/domain/entities/user';
+import { User, UserOutput, UserProps } from '@/core/domain/entities/user';
 import { BaseEntity } from '@/core/domain/repositories/base.entity';
-import { CreateUserOutput } from '../dtos/users/output';
 import { CRUDRepository } from '../repositories/crud';
 
 export class UsersService implements BaseEntity<UserProps> {
   constructor(private readonly repo: CRUDRepository<User>) {}
 
-  async create(input: UserProps): Promise<CreateUserOutput> {
+  async create(input: UserProps): Promise<UserOutput> {
     const user = User.create(input);
     await this.repo.create(user);
     return user.toJSON();
   }
 
-  async findAll(): Promise<CreateUserOutput[]> {
+  async findAll(): Promise<UserOutput[]> {
     return this.repo.findAll();
   }
 
-  async findOne(id: string): Promise<CreateUserOutput> {
+  async findOne(id: string): Promise<UserOutput> {
     return await this.repo.findOne(id);
   }
 
-  async update(id: string, updateDto): Promise<CreateUserOutput> {
+  async update(id: string, updateDto): Promise<UserOutput> {
     return await this.repo.update(id, updateDto);
   }
 

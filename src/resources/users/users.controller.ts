@@ -1,6 +1,4 @@
 import { UsersService } from '@/core/app/services/user.crud';
-import { CreateUserDto } from '@/shared/dtos/users/create';
-import { UpdateUserDto } from '@/shared/dtos/users/update';
 
 import {
   Body,
@@ -11,6 +9,8 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { CreateUserDto } from './dtos/create';
+import { UpdateUserDto } from './dtos/update';
 
 @Controller('users')
 export class UsersController {

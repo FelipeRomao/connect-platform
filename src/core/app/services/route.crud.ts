@@ -1,12 +1,12 @@
-import { Route } from '@/core/domain/entities/route';
+import { Route, RouteProps } from '@/core/domain/entities/route';
 import { BaseEntity } from '@/core/domain/repositories/base.entity';
-import { CreateRouteInput } from '../dtos/routes/input';
+
 import { CRUDRepository } from '../repositories/crud';
 
-export class RoutesService implements BaseEntity<CreateRouteInput> {
+export class RoutesService implements BaseEntity<RouteProps> {
   constructor(private readonly repo: CRUDRepository<Route>) {}
 
-  async create(input: CreateRouteInput): Promise<CreateRouteInput> {
+  async create(input: RouteProps): Promise<RouteProps> {
     const route = Route.create(input);
     await this.repo.create(route);
     return route.toJSON();

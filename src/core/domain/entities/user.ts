@@ -6,6 +6,13 @@ export type UserProps = {
   birth: Date;
 };
 
+export type UserOutput = {
+  id: string;
+  avatarUrl: string;
+  displayName: string;
+  birth: Date;
+};
+
 export class User extends Entity<UserProps> {
   public readonly id: string;
   public props: Required<UserProps>;

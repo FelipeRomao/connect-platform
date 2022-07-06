@@ -4,8 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RouteSchema } from './core/infra/db/typeorm/route.schema';
-import { UserSchema } from './core/infra/db/typeorm/user.schema';
+import { RouteSchema } from './core/infra/database/typeorm/route.schema';
+import { UserSchema } from './core/infra/database/typeorm/user.schema';
 import { UsersModule } from './resources/users/users.module';
 @Module({
   imports: [
